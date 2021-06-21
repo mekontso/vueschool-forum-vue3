@@ -5,7 +5,7 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-
+const name = 'MAS'
 export default {
   name: 'App',
   components: {
