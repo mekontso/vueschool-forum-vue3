@@ -1,6 +1,8 @@
 {
   "name": "vueschool-forum-vue3",
   "version": "0.1.0",
+  "description": "Forum app build while learning vue on vueschool. The VUE.JS 3 Masterclass",
+  "author": "Mekontso Anderson Sa'a <mekontsoanderson@gmail.com>",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,7 +11,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
