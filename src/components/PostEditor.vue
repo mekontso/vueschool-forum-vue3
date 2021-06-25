@@ -19,12 +19,8 @@ export default {
   },
   methods: {
     save () {
-      const postId = 'ggg' + Math.random()
       const post = {
-        id: postId,
-        text: this.text,
-        publishedAt: Math.floor(Date.now() / 1000),
-        userId: '38St7Q8Zi2N1SPa5ahzssq9kbyp1'
+        text: this.text
       }
       // We use custom events to communicate with parent components
       this.$emit('save-post', { post }) // access under eventData.post

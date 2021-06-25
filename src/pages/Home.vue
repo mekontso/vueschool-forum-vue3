@@ -1,5 +1,5 @@
 <template>
-  <h1>
+  <h1 class='push-top'>
     Welcome to the forums
   </h1>
   <div class='col-full'>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import sourceData from '@/data.json'
+
 import CategoryList from '@/components/CategoryList'
 
 export default {
@@ -19,11 +19,9 @@ export default {
   components: {
     CategoryList
   },
-  data () {
-    return {
-      threads: sourceData.threads,
-      forums: sourceData.forums,
-      categories: sourceData.categories
+  computed: {
+    categories () {
+      return this.$store.state.categories
     }
   }
 }

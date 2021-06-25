@@ -6,6 +6,7 @@ import NotFound from '@/pages/NotFound'
 import sourceData from '@/data.json'
 import Forum from '@/pages/Forum'
 import Category from '@/pages/Category'
+import Profile from '@/pages/Profile'
 
 const routes = [
   {
@@ -24,6 +25,18 @@ const routes = [
     name: 'Category',
     component: Category,
     props: true
+  },
+  {
+    path: '/me/edit',
+    name: 'ProfileEdit',
+    component: Profile,
+    props: { edit: true }
+  },
+  {
+    path: '/me',
+    name: 'Profile',
+    component: Profile,
+    meta: { toTop: true, smoothScroll: true }
   },
   {
     // Add dynamic link
@@ -63,5 +76,11 @@ const routes = [
 
 export default createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  // add scroll behavior on route visit
+  scrollBehavior (to) {
+    if (to.meta.toTop) scroll.top = 0
+    if (to.meta.smoothScroll) scroll.behavior = 'smooth'
+    return scroll
+  }
 })
