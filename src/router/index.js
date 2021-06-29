@@ -2,6 +2,8 @@ import Home from '@/pages/Home'
 // import the needed functions for the routes
 import { createRouter, createWebHistory } from 'vue-router'
 import ThreadShow from '@/pages/ThreadShow'
+import ThreadCreate from '@/pages/ThreadCreate'
+import ThreadEdit from '@/pages/ThreadEdit'
 import NotFound from '@/pages/NotFound'
 import sourceData from '@/data.json'
 import Forum from '@/pages/Forum'
@@ -70,6 +72,18 @@ const routes = [
       }
       // If not exist redirect to nor found page
     }
+  },
+  {
+    path: '/forum/:forumId/thread/create',
+    name: 'ThreadCreate',
+    component: ThreadCreate,
+    props: true
+  },
+  {
+    path: '/thread/:id/edit',
+    name: 'ThreadEdit',
+    component: ThreadEdit,
+    props: true
   },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound }
 ]
